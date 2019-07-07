@@ -1,0 +1,49 @@
+{
+    "name": "WhatsApp",
+    "author": "Jonatan Alcocer Zamora",
+    "description": "The extension this allow conect in your session whatsapp",
+    "version": "1.0",
+    "icons": {
+      "25": "images/icons-whatsapp-25.png",
+      "48": "images/icons-whatsapp-48.png"
+    },
+    "homepage_url": "https://web.whatsapp.com/",
+    "permissions": [
+      "<all_urls>",
+      "notifications",
+      "cookies",
+      "tab",
+      "pageAction",
+      "webRequest",
+      "webRequestBlocking",
+      "webNavigation",
+      "storage",
+      "sessions",
+      "unlimitedStorage",
+      "contextMenus",
+      "omnibox",
+      "menus",
+      "menus.overrideContext",
+      "devtools.inspectedWindow"
+    ], 
+    "browser_action": {
+      "default_icon": {
+        "20": "images/icons-whatsapp-20.png",
+        "40": "images/icons-whatsapp-40.png"
+      },
+      "default_title": "WhatsApp",
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [{
+      "matches": [
+          "<all_urls>"
+      ],
+      "js": ["js/content.js"],
+      "run_at": "document_end",
+      "all_frames": true
+  }],
+    "background": {
+      "scripts": ["js/background.js"],
+      "persistent": true
+    }
+  }
